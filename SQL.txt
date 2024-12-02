@@ -1,0 +1,105 @@
+MySQL
+=========
+Types:
+1.DDL - Data Definition Language (CREATE,ALTER,DROP)
+2.DMl - Data Manipulation Language (INSERT)
+3.DCL - Data Control language (SELECT)
+4.TCL- Transaction Control Language
+5.DQL - Data Querying Language
+
+Data types:
+1. INT - 4 bytes in size - age
+2. BIGINT - 8 bytes in size - total_sales
+3. FLOAT - 4 bytes in size - price
+4. DOUBLE - 8 bytes in size - rating
+5. DECIMAL - salary
+6. CHAR - gender
+7. VARCHAR - email
+8. TEXT - description
+9. DATE - YYYY-MM-DD - birthDate
+10. TIME - HH:MM:SS - start_time
+11. DATETIME - YYYY-MM-DD HH:MM:SS created_at
+12. TIMESTAMP - updated_at
+13. BOOLEAN - TRUE or FALSE
+14. BLOB - stores images or files - profile_photo
+
+Create Database:
+
+CREATE DATABASE userDB;
+create database locationDB;
+
+Delete Database:
+
+DROP DATABASE userDB;
+
+Use  Database:
+
+use userDB;
+
+show DATABASES;
+
+delete - DROP DATABASE locationDB;
+
+use userDB;
+
+Syntax to create a table
+==========================
+CREATE TABLE users(
+	user_id  INT PRIMARY AUTO_INCREMENT,
+	username VARCHAR(255) NOT NULL,
+	age INT NOT NULL,
+	profession VARCHAR(50) NOT NULL,
+	isAdmin BOOLEAN,
+	application_id INT,
+	FOREIGN KEY (application_id) REFERENCES Application(application_id)
+);
+
+Syntax to Insert data
+=========================
+INSERT INTO users (username,age,profession,isAdmin) VALUES('kishore',28,'IT',FALSE),
+INSERT INTO users(username,age,profession,isAdmin) VALUES
+('kuumar',27,'IT',FALSE),
+('SAI',25,'HR',TRUE),
+('Venkat',28,'IT',FALSE);
+
+SELECT * FROM users;
+SELECT username FROM users;
+
+SHOW TABLES;
+
+Keys in SQL:
+1. Primanry Key - Unique Identifier for each record in a database table
+2. Foreign Key - It is a field in a table that refers to the primary key in the another table
+
+CONSTRAINTS in SQL
+====================
+1.PRIMARY KEY - should be unique and not null
+2. UNIQUE - Should be used only once - Eg:Username in Github Profile
+3. DEFAULT - Provides a default value for a column when no value is specified during insertion
+4. CHECK - Ensures that all values in a column satisfy a specific condition. 
+			It is used to limit the rannge of values that can be inserted into a column.
+5. NOT NULL - Ensures that a coolumn cannot have a null
+6. FOREIGN KEY - Prevent actions that would destroy links between tables.
+UNIQUE:
+=========
+Ensures that all the values in a column are uunique across the rows of a table.
+
+Clauses in SQL:
+===============
+1. WHERE - It is used to filter records in a query based on specific conditions.
+
+Operators with WHERE Clause:
+1. Arithmetic operators - +,-,*,/.%
+2. Comparision Operators : =,!=,>,>=,<,<=
+3. Logical operators: AND, OR, NOT, IN, BETWEEN, ALL, LIKE,  ANY
+4. Bitwise Operators : &, |
+
+
+ORDER BY(ASC, DESC) and LIMIT
+
+Aggregate Functions in SQL
+1. COUNT - retrieves number of rows Count from the table
+2. MAX - retrive MAX value from a column in a table
+3. MIN - retrive MIN value from a column in a table
+4. SUM - retrive SUM of a column in a table
+5. AVG - retrives AVG value from a column in a table

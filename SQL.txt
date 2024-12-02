@@ -99,7 +99,15 @@ ORDER BY(ASC, DESC) and LIMIT
 
 Aggregate Functions in SQL
 1. COUNT - retrieves number of rows Count from the table
-2. MAX - retrive MAX value from a column in a table
+2. MAX - retrieve MAX value from a column in a table
 3. MIN - retrive MIN value from a column in a table
 4. SUM - retrive SUM of a column in a table
-5. AVG - retrives AVG value from a column in a table
+5. AVG - retrieves AVG value from a column in a table
+
+Examples:
+==========
+1. COUNT - Select COUNT(*) AS total-count FROM users;
+2. MAX - SELECT MAX(budget) FROM Box_Office;
+3. MIN - SELECT MIN(budget) FROM Box_Office;
+4. SUM - SELECT SUM(collection) FROm Box_Office;
+5. AVG - SELECT AVG(rating) FROM movies;
